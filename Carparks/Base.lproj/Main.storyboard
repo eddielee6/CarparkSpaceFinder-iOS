@@ -1,25 +1,151 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aLn-2j-AIE">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Carpark Table View Controller-->
+        <scene sceneID="G37-nG-SRG">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="GXO-dv-t6i" customClass="CarparkTableViewController" customModule="Carparks" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="nvg-X8-G4u">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="carparkCell" rowHeight="90" id="qSC-2i-HY0" customClass="CarparkTableViewCell" customModule="Carparks" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qSC-2i-HY0" id="REa-iM-ZLU">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UTF-K5-f3o">
+                                            <rect key="frame" x="8" y="8" width="584" height="73"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carpark Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnE-Er-TNG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="584" height="28"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="1000" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8IV-ZM-HCS">
+                                                    <rect key="frame" x="0.0" y="33" width="584" height="2"/>
+                                                </progressView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UG9-d2-KJb">
+                                                    <rect key="frame" x="0.0" y="40" width="584" height="14"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Carpark Capacity: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0H-Nt-CUL">
+                                                            <rect key="frame" x="0.0" y="0.0" width="98" height="14"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fq1-zR-fVW">
+                                                            <rect key="frame" x="98" y="0.0" width="486" height="14"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xBz-mh-AUm">
+                                                    <rect key="frame" x="0.0" y="59" width="584" height="14"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Free Spaces: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJf-oD-eLK">
+                                                            <rect key="frame" x="0.0" y="0.0" width="72" height="14"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uW7-AI-Z60">
+                                                            <rect key="frame" x="72" y="0.0" width="512" height="14"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="UTF-K5-f3o" secondAttribute="trailing" id="M8K-HY-cpr"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="UTF-K5-f3o" secondAttribute="bottom" id="Owx-Z4-o1z"/>
+                                        <constraint firstItem="UTF-K5-f3o" firstAttribute="top" secondItem="REa-iM-ZLU" secondAttribute="topMargin" id="U5x-cy-T8V"/>
+                                        <constraint firstItem="UTF-K5-f3o" firstAttribute="leading" secondItem="REa-iM-ZLU" secondAttribute="leadingMargin" id="hGj-zu-MEL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="capacityLabel" destination="fq1-zR-fVW" id="kYD-4H-gA7"/>
+                                    <outlet property="capacityProgressBar" destination="8IV-ZM-HCS" id="Ujp-wI-cc4"/>
+                                    <outlet property="carparkName" destination="RnE-Er-TNG" id="Kml-eF-QRh"/>
+                                    <outlet property="freeSpacesLabel" destination="uW7-AI-Z60" id="s3j-cw-Ih5"/>
+                                    <segue destination="xQC-qH-EIG" kind="show" identifier="showCarpark" id="2hg-rR-0a8"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GXO-dv-t6i" id="9E9-gq-Bxy"/>
+                            <outlet property="delegate" destination="GXO-dv-t6i" id="AvP-bb-EgC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eSZ-zm-whd"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eD9-x9-6xP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1965" y="804"/>
+        </scene>
+        <!--Carpark View Controller-->
+        <scene sceneID="w1g-L9-tzS">
+            <objects>
+                <viewController id="xQC-qH-EIG" customClass="CarparkViewController" customModule="Carparks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="crd-vk-s0f"/>
+                        <viewControllerLayoutGuide type="bottom" id="kjN-bP-mdw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lAk-l4-6lq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T2H-2d-kay">
+                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T2H-2d-kay" firstAttribute="top" secondItem="crd-vk-s0f" secondAttribute="bottom" id="YVJ-la-SCb"/>
+                            <constraint firstAttribute="trailing" secondItem="T2H-2d-kay" secondAttribute="trailing" id="hG7-qz-e3h"/>
+                            <constraint firstItem="T2H-2d-kay" firstAttribute="leading" secondItem="lAk-l4-6lq" secondAttribute="leading" id="l4E-vc-iQ1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="occupancyPercentageProgressBar" destination="T2H-2d-kay" id="RSD-kJ-k2i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ICY-DN-kTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2703" y="804"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iuU-pk-xBO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aLn-2j-AIE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YJ0-Pt-gGj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GXO-dv-t6i" kind="relationship" relationship="rootViewController" id="zRK-FY-rEV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qma-fu-gZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1153" y="804"/>
         </scene>
     </scenes>
 </document>
