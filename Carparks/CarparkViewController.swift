@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import MapKit
 
 class CarparkViewController: UIViewController {
     
     @IBOutlet weak var occupancyPercentageProgressBar: UIProgressView!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var carparkNameLabel: UILabel!
     
     var carpark: Carpark! {
         didSet {
@@ -20,21 +23,15 @@ class CarparkViewController: UIViewController {
     
     private func setupView() {
         title = carpark.CarparkName
-        occupancyPercentageProgressBar?.progress = Float(carpark.Occupancy) / Float(carpark.Capacity)
-        occupancyPercentageProgressBar?.progressTintColor = getTintColourForStatus(carpark.Status)
-    }
-    
-    private func getTintColourForStatus(status: Carpark.CarparkStatus) -> UIColor {
-        switch status {
-        case .Unknown:
-            return UIColor.darkGrayColor()
-        case .Good:
-            return UIColor.greenColor()
-        case .Ok:
-            return UIColor.orangeColor()
-        case .Bad:
-            return UIColor.redColor()
-        }
+        carparkNameLabel?.text = carpark.CarparkName
+        
+        occupancyPercentageProgressBar?.progress = carpark.OccupancyPercentage/100
+        occupancyPercentageProgressBar?.progressTintColor = carpark.StatusColour
+        
+        let carparkLocation = CLLocation(latitude: CLLocationDegrees(carpark.Location.Latitude), longitude: CLLocationDegrees(carpark.Location.Longitude))
+        let regionRadius: CLLocationDistance = 1000
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(carparkLocation.coordinate, regionRadius*2, regionRadius*2)
+        mapView?.setRegion(coordinateRegion, animated: false)
     }
 
     override func viewDidLoad() {

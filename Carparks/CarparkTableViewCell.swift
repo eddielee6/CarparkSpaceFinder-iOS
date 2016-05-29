@@ -18,22 +18,8 @@ class CarparkTableViewCell: UITableViewCell {
     func setCarpark(carpark: Carpark) {
         carparkName.text = carpark.CarparkName
         capacityLabel.text = "\(carpark.Capacity)"
-        let freeSpaces = carpark.Capacity - carpark.Occupancy
-        freeSpacesLabel.text = "\(freeSpaces)"
-        capacityProgressBar.progress = Float(carpark.Occupancy) / Float(carpark.Capacity)
-        capacityProgressBar.progressTintColor = getTintColourForStatus(carpark.Status)        
-    }
-    
-    private func getTintColourForStatus(status: Carpark.CarparkStatus) -> UIColor {
-        switch status {
-        case .Unknown:
-            return UIColor.darkGrayColor()
-        case .Good:
-            return UIColor.greenColor()
-        case .Ok:
-            return UIColor.orangeColor()
-        case .Bad:
-            return UIColor.redColor()
-        }
+        freeSpacesLabel.text = "\(carpark.FreeSpaces)"
+        capacityProgressBar.progress = carpark.OccupancyPercentage/100
+        capacityProgressBar.progressTintColor = carpark.StatusColour
     }
 }

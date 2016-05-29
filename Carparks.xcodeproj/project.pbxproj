@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C238EA11CFADE2100D3B6E1 /* NumericExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C238EA01CFADE2100D3B6E1 /* NumericExtensions.swift */; };
 		2C9DB3991CF9FAB500A98294 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9DB3981CF9FAB500A98294 /* AppDelegate.swift */; };
 		2C9DB39E1CF9FAB500A98294 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C9DB39C1CF9FAB500A98294 /* Main.storyboard */; };
 		2C9DB3A01CF9FAB500A98294 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C9DB39F1CF9FAB500A98294 /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C238EA01CFADE2100D3B6E1 /* NumericExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericExtensions.swift; sourceTree = "<group>"; };
 		2C9DB3951CF9FAB500A98294 /* Carparks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carparks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C9DB3981CF9FAB500A98294 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C9DB39D1CF9FAB500A98294 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				2C9DB3AD1CFA035300A98294 /* CarparkTableViewCell.swift */,
 				2C9DB3AF1CFA060E00A98294 /* Carpark.swift */,
 				2C9DB3B31CFA0FA500A98294 /* CarparkViewController.swift */,
+				2C238EA01CFADE2100D3B6E1 /* NumericExtensions.swift */,
 			);
 			path = Carparks;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				2C9DB3B01CFA060E00A98294 /* Carpark.swift in Sources */,
 				2C9DB3B41CFA0FA500A98294 /* CarparkViewController.swift in Sources */,
 				2C9DB3AC1CF9FB4B00A98294 /* CarparkTableViewController.swift in Sources */,
+				2C238EA11CFADE2100D3B6E1 /* NumericExtensions.swift in Sources */,
 				2C9DB3AE1CFA035300A98294 /* CarparkTableViewCell.swift in Sources */,
 				2C9DB3991CF9FAB500A98294 /* AppDelegate.swift in Sources */,
 			);
@@ -317,6 +321,7 @@
 				2C9DB3A91CF9FAB500A98294 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

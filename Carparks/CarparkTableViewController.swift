@@ -21,16 +21,17 @@ class CarparkTableViewController: UITableViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         
         for i in 1...100 {
-            let capacity = randomInt(between: 100, and: 1000)
-            let occupancy = randomInt(between: capacity/3, and: capacity)
-            let carpark = Carpark(CarparkName: "Carpark \(i)", Capacity: capacity, Occupancy: occupancy)
+            let name = "Carpark \(i)"
+            let capacity = Int.random(between: 100, and: 1000)
+            let occupancy = Int.random(between: capacity/3, and: capacity)
+            
+            let latitude = Float.random(between: 52, and: 53)
+            let longitude = Float.random(between: -1.1, and: -1.9)
+            let coordinates = Carpark.Coordinates(Latitude: latitude, Longitude: longitude)
+            
+            let carpark = Carpark(CarparkName: name, Capacity: capacity, Occupancy: occupancy, Location: coordinates)
             carparks.append(carpark)
         }
-    }
-    
-    func randomInt(between from: Int, and to: Int) -> Int {
-        let range = UInt32(to) - UInt32(from)
-        return Int(arc4random_uniform(range)) + from;
     }
     
     // MARK: - Table view data source
@@ -71,40 +72,4 @@ class CarparkTableViewController: UITableViewController {
             }
         }
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
 }

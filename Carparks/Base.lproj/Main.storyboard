@@ -110,18 +110,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="BdO-Cv-qG8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="7rK-Su-zU9"/>
+                                </constraints>
+                            </mapView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="T2H-2d-kay">
-                                <rect key="frame" x="0.0" y="64" width="600" height="2"/>
+                                <rect key="frame" x="0.0" y="348" width="600" height="2"/>
                             </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carpark Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16S-c5-haU">
+                                <rect key="frame" x="20" y="358" width="109" height="20"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="T2H-2d-kay" firstAttribute="top" secondItem="crd-vk-s0f" secondAttribute="bottom" id="YVJ-la-SCb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BdO-Cv-qG8" secondAttribute="trailing" constant="-20" id="3Px-h6-9Xr"/>
+                            <constraint firstItem="T2H-2d-kay" firstAttribute="top" secondItem="BdO-Cv-qG8" secondAttribute="bottom" constant="-2" id="CFb-G5-BE0"/>
+                            <constraint firstItem="16S-c5-haU" firstAttribute="top" secondItem="T2H-2d-kay" secondAttribute="bottom" constant="8" symbolic="YES" id="I9m-We-axg"/>
+                            <constraint firstItem="16S-c5-haU" firstAttribute="leading" secondItem="lAk-l4-6lq" secondAttribute="leadingMargin" id="Iw9-NO-G16"/>
+                            <constraint firstItem="BdO-Cv-qG8" firstAttribute="leading" secondItem="lAk-l4-6lq" secondAttribute="leadingMargin" constant="-20" id="Mn4-yJ-8Wn"/>
                             <constraint firstAttribute="trailing" secondItem="T2H-2d-kay" secondAttribute="trailing" id="hG7-qz-e3h"/>
                             <constraint firstItem="T2H-2d-kay" firstAttribute="leading" secondItem="lAk-l4-6lq" secondAttribute="leading" id="l4E-vc-iQ1"/>
+                            <constraint firstItem="BdO-Cv-qG8" firstAttribute="top" secondItem="crd-vk-s0f" secondAttribute="bottom" constant="-64" id="m6e-8K-pIC"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="carparkNameLabel" destination="16S-c5-haU" id="D5H-XA-QuZ"/>
+                        <outlet property="mapView" destination="BdO-Cv-qG8" id="D13-6S-e6L"/>
                         <outlet property="occupancyPercentageProgressBar" destination="T2H-2d-kay" id="RSD-kJ-k2i"/>
                     </connections>
                 </viewController>
