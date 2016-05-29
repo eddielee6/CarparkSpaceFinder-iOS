@@ -11,14 +11,15 @@ import MapKit
 
 class CarparkViewController: UIViewController {
     
-    @IBOutlet weak var occupancyPercentageProgressBar: UIProgressView!
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var carparkNameLabel: UILabel!
+    @IBOutlet weak private var occupancyPercentageProgressBar: UIProgressView!
+    @IBOutlet weak private var mapView: MKMapView!
+    @IBOutlet weak private var carparkNameLabel: UILabel!
     
-    var carpark: Carpark! {
-        didSet {
-            setupView()
-        }
+    var carpark: Carpark!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
     }
     
     private func setupView() {
@@ -32,10 +33,5 @@ class CarparkViewController: UIViewController {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(carparkLocation.coordinate, regionRadius*2, regionRadius*2)
         mapView?.setRegion(coordinateRegion, animated: false)
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupView()
     }
 }

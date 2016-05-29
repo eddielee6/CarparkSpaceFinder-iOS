@@ -10,10 +10,10 @@ import UIKit
 
 class CarparkTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var carparkName: UILabel!
-    @IBOutlet weak var capacityProgressBar: UIProgressView!
-    @IBOutlet weak var capacityLabel: UILabel!
-    @IBOutlet weak var freeSpacesLabel: UILabel!
+    @IBOutlet weak private var carparkName: UILabel!
+    @IBOutlet weak private var capacityProgressBar: UIProgressView!
+    @IBOutlet weak private var capacityLabel: UILabel!
+    @IBOutlet weak private var freeSpacesLabel: UILabel!
     
     func setCarpark(carpark: Carpark) {
         carparkName.text = carpark.CarparkName
