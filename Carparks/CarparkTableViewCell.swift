@@ -16,10 +16,10 @@ class CarparkTableViewCell: UITableViewCell {
     @IBOutlet weak private var freeSpacesLabel: UILabel!
     
     func setCarpark(carpark: Carpark) {
-        carparkName.text = carpark.CarparkName
-        capacityLabel.text = "\(carpark.Capacity)"
-        freeSpacesLabel.text = "\(carpark.FreeSpaces)"
-        capacityProgressBar.progress = carpark.OccupancyPercentage/100
-        capacityProgressBar.progressTintColor = carpark.StatusColour
+        carparkName.text = carpark.carparkName
+        capacityLabel.text = "\(carpark.capacity)"
+        freeSpacesLabel.text = "\(carpark.freeSpaces)"
+        capacityProgressBar.progress = carpark.occupancyPercentage/100
+        capacityProgressBar.progressTintColor = carpark.statusColour
     }
 }

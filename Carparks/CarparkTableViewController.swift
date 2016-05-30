@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class CarparkTableViewController: UITableViewController {
     
@@ -25,11 +26,12 @@ class CarparkTableViewController: UITableViewController {
             let capacity = Int.random(between: 100, and: 1000)
             let occupancy = Int.random(between: capacity/3, and: capacity)
             
-            let latitude = Float.random(between: 52, and: 53)
-            let longitude = Float.random(between: -1.1, and: -1.9)
-            let coordinates = Carpark.Coordinates(Latitude: latitude, Longitude: longitude)
-            
-            let carpark = Carpark(CarparkName: name, Capacity: capacity, Occupancy: occupancy, Location: coordinates)
+            let latitude = CLLocationDegrees(Float.random(between: 52, and: 53))
+            let longitude = CLLocationDegrees(Float.random(between: -1.1, and: -1.9))
+            let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            let carpark = Carpark(withLocation: coordinates, name: name, capacity: capacity)
+            carpark.occupancy = occupancy
+                
             carparks.append(carpark)
         }
     }

@@ -7,23 +7,31 @@
 //
 
 import UIKit
+import MapKit
 
-struct Carpark {
-    let CarparkName: String
-    let Capacity: Int
-    let Occupancy: Int
-    let Location: Coordinates
+class Carpark: NSObject {
     
-    var FreeSpaces: Int {
-        return Capacity - Occupancy
+    let carparkName: String
+    let location: CLLocationCoordinate2D
+    let capacity: Int
+    var occupancy: Int = 0
+    
+    init(withLocation location: CLLocationCoordinate2D, name: String, capacity: Int) {
+        self.location = location
+        self.carparkName = name
+        self.capacity = capacity
     }
     
-    var OccupancyPercentage: Float {
-        return (Float(Occupancy)/Float(Capacity)) * 100
+    var freeSpaces: Int {
+        return capacity - occupancy
     }
     
-    var Status: CarparkStatus {
-        switch OccupancyPercentage {
+    var occupancyPercentage: Float {
+        return (Float(occupancy)/Float(capacity)) * 100
+    }
+    
+    var status: CarparkStatus {
+        switch occupancyPercentage {
         case let op where op < 75:
             return .Good
         case let op where op > 75 && op < 95:
@@ -33,11 +41,6 @@ struct Carpark {
         default:
             return .Unknown
         }
-    }
-    
-    struct Coordinates {
-        let Latitude: Float
-        let Longitude: Float
     }
     
     enum CarparkStatus {
@@ -50,8 +53,8 @@ struct Carpark {
 
 // Colours
 extension Carpark {
-    var StatusColour: UIColor {
-        switch Status {
+    var statusColour: UIColor {
+        switch status {
         case .Unknown:
             return UIColor.darkGrayColor()
         case .Good:
@@ -61,5 +64,24 @@ extension Carpark {
         case .Bad:
             return UIColor.redColor()
         }
+    }
+}
+
+// MKAnnotation
+extension Carpark: MKAnnotation {
+    convenience init(withLocation location: CLLocationCoordinate2D) {
+        self.init(withLocation: location, name: "", capacity: 0)
+    }
+    
+    var coordinate: CLLocationCoordinate2D {
+        return location
+    }
+    
+    var title: String? {
+        return carparkName
+    }
+    
+    var subtitle: String? {
+        return "\(freeSpaces) Free Spaces"
     }
 }

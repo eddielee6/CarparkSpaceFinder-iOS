@@ -23,15 +23,21 @@ class CarparkViewController: UIViewController {
     }
     
     private func setupView() {
-        title = carpark.CarparkName
-        carparkNameLabel?.text = carpark.CarparkName
+        title = carpark.carparkName
+        carparkNameLabel?.text = carpark.carparkName
         
-        occupancyPercentageProgressBar?.progress = carpark.OccupancyPercentage/100
-        occupancyPercentageProgressBar?.progressTintColor = carpark.StatusColour
+        occupancyPercentageProgressBar?.progress = carpark.occupancyPercentage/100
+        occupancyPercentageProgressBar?.progressTintColor = carpark.statusColour
         
-        let carparkLocation = CLLocation(latitude: CLLocationDegrees(carpark.Location.Latitude), longitude: CLLocationDegrees(carpark.Location.Longitude))
+        showCarparkOnMap()
+        
+    }
+    
+    private func showCarparkOnMap() {
         let regionRadius: CLLocationDistance = 1000
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(carparkLocation.coordinate, regionRadius*2, regionRadius*2)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(carpark.location, regionRadius*2, regionRadius*2)
         mapView?.setRegion(coordinateRegion, animated: false)
+        mapView?.addAnnotation(carpark)
+        mapView?.selectedAnnotations = [carpark]
     }
 }
