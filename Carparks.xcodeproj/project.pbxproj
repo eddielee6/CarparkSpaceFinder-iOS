@@ -17,6 +17,7 @@
 		2C9DB3B01CFA060E00A98294 /* Carpark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9DB3AF1CFA060E00A98294 /* Carpark.swift */; };
 		2C9DB3B41CFA0FA500A98294 /* CarparkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9DB3B31CFA0FA500A98294 /* CarparkViewController.swift */; };
 		2C9DB3B61CFA1A7F00A98294 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C9DB3B51CFA1A7F00A98294 /* MapKit.framework */; };
+		2CD7FC561CFC55FA00880FD1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD7FC551CFC55FA00880FD1 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2C9DB3AF1CFA060E00A98294 /* Carpark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carpark.swift; sourceTree = "<group>"; };
 		2C9DB3B31CFA0FA500A98294 /* CarparkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarparkViewController.swift; sourceTree = "<group>"; };
 		2C9DB3B51CFA1A7F00A98294 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		2CD7FC551CFC55FA00880FD1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 				2C9DB3AF1CFA060E00A98294 /* Carpark.swift */,
 				2C9DB3B31CFA0FA500A98294 /* CarparkViewController.swift */,
 				2C238EA01CFADE2100D3B6E1 /* NumericExtensions.swift */,
+				2CD7FC551CFC55FA00880FD1 /* MapViewController.swift */,
 			);
 			path = Carparks;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				2C238EA11CFADE2100D3B6E1 /* NumericExtensions.swift in Sources */,
 				2C9DB3AE1CFA035300A98294 /* CarparkTableViewCell.swift in Sources */,
 				2C9DB3991CF9FAB500A98294 /* AppDelegate.swift in Sources */,
+				2CD7FC561CFC55FA00880FD1 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

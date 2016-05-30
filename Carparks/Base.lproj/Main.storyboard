@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="aLn-2j-AIE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Cgu-9r-sbm">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Carpark Table View Controller-->
+        <!--Carparks-->
         <scene sceneID="G37-nG-SRG">
             <objects>
                 <tableViewController id="GXO-dv-t6i" customClass="CarparkTableViewController" customModule="Carparks" customModuleProvider="target" sceneMemberID="viewController">
@@ -92,11 +92,11 @@
                             <outlet property="delegate" destination="GXO-dv-t6i" id="AvP-bb-EgC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="eSZ-zm-whd"/>
+                    <navigationItem key="navigationItem" title="Carparks" id="eSZ-zm-whd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eD9-x9-6xP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1965" y="804"/>
+            <point key="canvasLocation" x="2777" y="804"/>
         </scene>
         <!--Carpark View Controller-->
         <scene sceneID="w1g-L9-tzS">
@@ -146,12 +146,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICY-DN-kTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2703" y="804"/>
+            <point key="canvasLocation" x="3515" y="804"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--List-->
         <scene sceneID="iuU-pk-xBO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aLn-2j-AIE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" id="Zp9-77-XEf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YJ0-Pt-gGj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -164,7 +165,77 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qma-fu-gZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1965" y="804"/>
+        </scene>
+        <!--Carparks-->
+        <scene sceneID="gc0-gJ-mka">
+            <objects>
+                <viewController id="on1-4q-Ibi" customClass="MapViewController" customModule="Carparks" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7bm-ji-363"/>
+                        <viewControllerLayoutGuide type="bottom" id="aTu-Gl-lwY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6rh-tf-l4n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gun-rX-U3A">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gun-rX-U3A" firstAttribute="top" secondItem="6rh-tf-l4n" secondAttribute="top" id="3s8-ZB-9sR"/>
+                            <constraint firstAttribute="trailing" secondItem="Gun-rX-U3A" secondAttribute="trailing" id="D19-wA-J6Y"/>
+                            <constraint firstItem="Gun-rX-U3A" firstAttribute="bottom" secondItem="aTu-Gl-lwY" secondAttribute="top" id="gYc-2W-HY4"/>
+                            <constraint firstItem="Gun-rX-U3A" firstAttribute="leading" secondItem="6rh-tf-l4n" secondAttribute="leading" id="nnH-KU-FIO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Carparks" id="AcV-yZ-5li"/>
+                    <connections>
+                        <outlet property="mapView" destination="Gun-rX-U3A" id="Tp8-i7-EOj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Ii-6F-0sY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2767" y="1577"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="VIE-Zg-mJB">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Cgu-9r-sbm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="7hI-ep-A8f">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="aLn-2j-AIE" kind="relationship" relationship="viewControllers" id="xKr-ts-JS3"/>
+                        <segue destination="P6u-g3-TyO" kind="relationship" relationship="viewControllers" id="AIO-sU-2fV"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yX9-II-q9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="1153" y="804"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="VLA-cX-3Z1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="P6u-g3-TyO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="1QQ-4K-UXB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g6v-q4-NVH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="on1-4q-Ibi" kind="relationship" relationship="rootViewController" id="RUF-nl-Xab"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XV-QB-4C2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955" y="1577"/>
         </scene>
     </scenes>
 </document>
