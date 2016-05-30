@@ -187,7 +187,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gun-rX-U3A">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <outlet property="delegate" destination="on1-4q-Ibi" id="7fs-gX-SlC"/>
                                 </connections>
@@ -195,10 +195,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gun-rX-U3A" firstAttribute="top" secondItem="6rh-tf-l4n" secondAttribute="top" id="3s8-ZB-9sR"/>
-                            <constraint firstAttribute="trailing" secondItem="Gun-rX-U3A" secondAttribute="trailing" id="D19-wA-J6Y"/>
-                            <constraint firstItem="Gun-rX-U3A" firstAttribute="bottom" secondItem="aTu-Gl-lwY" secondAttribute="top" id="gYc-2W-HY4"/>
-                            <constraint firstItem="Gun-rX-U3A" firstAttribute="leading" secondItem="6rh-tf-l4n" secondAttribute="leading" id="nnH-KU-FIO"/>
+                            <constraint firstAttribute="bottom" secondItem="Gun-rX-U3A" secondAttribute="bottom" id="POr-PD-iPg"/>
+                            <constraint firstAttribute="trailing" secondItem="Gun-rX-U3A" secondAttribute="trailing" id="Q9z-Vc-ou0"/>
+                            <constraint firstItem="Gun-rX-U3A" firstAttribute="top" secondItem="6rh-tf-l4n" secondAttribute="top" id="Vmg-bJ-BNR"/>
+                            <constraint firstItem="Gun-rX-U3A" firstAttribute="leading" secondItem="6rh-tf-l4n" secondAttribute="leading" id="w4O-Vn-gEI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="AcV-yZ-5li"/>
