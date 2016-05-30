@@ -41,12 +41,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         guard annotation.isKindOfClass(Carpark.self) else {
             return nil
         }
-        
+                
+        let annotationView = getMapAnnotationViewForAnnotation(annotation)
+        annotationView.pinTintColor = (annotationView.annotation as! Carpark).statusColour
+        return annotationView
+    }
+    
+    func getMapAnnotationViewForAnnotation(annotation: MKAnnotation) -> MKPinAnnotationView {
         let identifier = "CarparkLocation"
         
         if let annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier) {
             annotationView.annotation = annotation
-            return annotationView
+            return annotationView as! MKPinAnnotationView
         } else {
             let annotationView = MKPinAnnotationView(annotation:annotation, reuseIdentifier:identifier)
             annotationView.enabled = true
