@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="2777" y="804"/>
         </scene>
-        <!--Carpark View Controller-->
+        <!--Carpark Name-->
         <scene sceneID="w1g-L9-tzS">
             <objects>
                 <viewController id="xQC-qH-EIG" customClass="CarparkViewController" customModule="Carparks" customModuleProvider="target" sceneMemberID="viewController">
@@ -138,6 +138,13 @@
                             <constraint firstItem="BdO-Cv-qG8" firstAttribute="top" secondItem="crd-vk-s0f" secondAttribute="bottom" constant="-64" id="m6e-8K-pIC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Carpark Name" id="V7F-Ia-nDD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="bKM-We-9Og">
+                            <connections>
+                                <action selector="shareCarpark:" destination="xQC-qH-EIG" id="rGO-H3-VAw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="carparkNameLabel" destination="16S-c5-haU" id="D5H-XA-QuZ"/>
                         <outlet property="mapView" destination="BdO-Cv-qG8" id="D13-6S-e6L"/>

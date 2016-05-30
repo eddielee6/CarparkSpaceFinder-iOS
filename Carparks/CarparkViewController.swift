@@ -33,6 +33,15 @@ class CarparkViewController: UIViewController {
         
     }
     
+    @IBAction func shareCarpark(sender: AnyObject) {
+        let text = "There are \(carpark.freeSpaces) free spaces in the \(carpark.carparkName) carpark"
+        let carparkUrl = NSURL(string: "http://carpark-space-finder.herokuapp.com/bla")!
+        let toShare = [text, carparkUrl]
+        
+        let activityViewController = UIActivityViewController(activityItems: toShare, applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     private func showCarparkOnMap() {
         let regionRadius: CLLocationDistance = 1000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(carpark.location, regionRadius*2, regionRadius*2)
