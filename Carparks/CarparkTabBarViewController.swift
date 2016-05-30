@@ -15,14 +15,15 @@ class CarparkTabBarViewController: UITabBarController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        requestUserLocation()
+//        requestUserLocation()
     }
     
-    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        if let selectedNavigationController = viewControllers?[selectedIndex] as? UINavigationController {
-            selectedNavigationController.popToRootViewControllerAnimated(false)
-        }
-    }
+//    override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+//        print(item)
+//        if let selectedNavigationController = viewControllers?[selectedIndex] as? UINavigationController {
+//            selectedNavigationController.popToRootViewControllerAnimated(false)
+//        }
+//    }
 }
 
 extension CarparkTabBarViewController: CLLocationManagerDelegate {
