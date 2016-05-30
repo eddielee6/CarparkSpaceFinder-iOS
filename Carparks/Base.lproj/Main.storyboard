@@ -204,10 +204,10 @@
             </objects>
             <point key="canvasLocation" x="2767" y="1577"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Carpark Tab Bar View Controller-->
         <scene sceneID="VIE-Zg-mJB">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Cgu-9r-sbm" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Cgu-9r-sbm" customClass="CarparkTabBarViewController" customModule="Carparks" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="7hI-ep-A8f">
                         <autoresizingMask key="autoresizingMask"/>
