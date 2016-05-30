@@ -146,7 +146,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICY-DN-kTM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3515" y="804"/>
+            <point key="canvasLocation" x="3795" y="1224"/>
         </scene>
         <!--Carparks-->
         <scene sceneID="iuU-pk-xBO">
@@ -181,6 +181,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gun-rX-U3A">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <connections>
+                                    <outlet property="delegate" destination="on1-4q-Ibi" id="7fs-gX-SlC"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,6 +197,7 @@
                     <navigationItem key="navigationItem" title="Map" id="AcV-yZ-5li"/>
                     <connections>
                         <outlet property="mapView" destination="Gun-rX-U3A" id="Tp8-i7-EOj"/>
+                        <segue destination="xQC-qH-EIG" kind="show" identifier="showCarpark" id="YQc-fN-une"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ii-6F-0sY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,7 +220,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yX9-II-q9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="804"/>
+            <point key="canvasLocation" x="1021" y="1224"/>
         </scene>
         <!--Map-->
         <scene sceneID="VLA-cX-3Z1">
@@ -244,4 +248,7 @@
         <image name="parking" width="25" height="25"/>
         <image name="parking-filled" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="YQc-fN-une"/>
+    </inferredMetricsTieBreakers>
 </document>
